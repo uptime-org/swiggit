@@ -198,7 +198,7 @@ setup_and_push() {
         return 1
     fi
     
-    if ! run_git commit -m "Initial commit: Irish gold Swiggit CLI! 🍀💰"; then
+    if ! run_git commit -m 'Initial commit: Irish gold Swiggit CLI! 🍀💰'; then
         print_warning "No changes to commit, but remote is set up"
         return 0
     fi
@@ -229,13 +229,52 @@ git_commit() {
         fi
         run_git commit -m "$message"
     else
-        run_git commit -m "$*"
+        # Properly quote the entire message
+        local commit_msg="$*"
+        run_git commit -m "$commit_msg"
     fi
 }
 
 git_push() {
+    # Auto-setup origin remote if it doesn't exist
+    if ! git remote get-url origin >/dev/null 2>&1; then
+        local github_user=$(get_config "github_username")
+        if [[ -n "$github_user" ]]; then
+            local repo_name=$(basename "$(pwd)")
+            local repo_url="git@github.com:$github_user/$repo_name.git"
+            
+            print_warning "🔗 No origin remote found. Auto-setting: $repo_url"
+            print_info "💡 This works for both fresh projects and existing repos"
+            run_git remote add origin "$repo_url"
+        else
+            print_error "No origin remote and no github_username configured"
+            return 1
+        fi
+    fi
+    
     if [[ $# -eq 0 ]]; then
-        run_git push
+        # Check if we need to set upstream
+        local current_branch=$(git branch --show-current 2>/dev/null || echo "main")
+        if ! git rev-parse --abbrev-ref "$current_branch@{upstream}" >/dev/null 2>&1; then
+            print_info "⬆️ Setting upstream for branch $current_branch"
+            
+            # Try to push, handle both fresh and existing repo scenarios
+            if run_git push -u origin "$current_branch" 2>/dev/null; then
+                print_success "Successfully pushed to remote! 🚀"
+            else
+                print_warning "🤔 Push failed - might be an existing repo with different history"
+                print_info "💪 Trying force push to take over existing repo..."
+                
+                if run_git push -u origin "$current_branch" --force; then
+                    print_success "Force push successful! Took over existing repo 💪"
+                else
+                    print_error "Failed to push. Check if repo exists and you have access"
+                    return 1
+                fi
+            fi
+        else
+            run_git push
+        fi
     else
         run_git push "$@"
     fi
