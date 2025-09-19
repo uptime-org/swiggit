@@ -63,7 +63,6 @@ get_global_config() {
 
 # Git command with identity injection
 run_git() {
-    local git_args="$*"
     local git_user=$(get_config "git_user_name")
     local git_email=$(get_config "git_user_email") 
     local ssh_key=$(get_config "ssh_key_path")
@@ -73,10 +72,10 @@ run_git() {
         return 1
     fi
     
-    print_info "🔧 Git: $git_args"
+    print_info "🔧 Git: $*"
     
     export GIT_SSH_COMMAND="ssh -i $ssh_key -o IdentitiesOnly=yes"
-    git -c user.name="$git_user" -c user.email="$git_email" $git_args
+    git -c user.name="$git_user" -c user.email="$git_email" "$@"
 }
 
 # Show current identity
