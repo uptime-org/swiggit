@@ -1,0 +1,41 @@
+# SSH Keys and ALL SSH Directory - NEVER COMMIT!
+.ssh/
+*.pem
+*.key
+*.pub
+
+# Config with sensitive tokens
+.swiggit.json
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Test Files
+test-*
+temp-*
+
+# Node modules (if we add any JS tooling)
+node_modules/
+npm-debug.log*
+
+# Local environment files
+.env.local
+.env.*.local

@@ -1,0 +1,43 @@
+{
+  "default": {
+    "org": "personal",
+    "repo": "swiggit",
+    "branch": "main",
+    "license": "MIT",
+    "visibility": "public"
+  },
+  "ssh": {
+    "options": "-o IdentitiesOnly=yes -o StrictHostKeyChecking=no",
+    "key_path": "./.ssh/id_rsa"
+  },
+  "git": {
+    "user_name": "shawnm",
+    "user_email": "uptime.llc.ops@gmail.com"
+  },
+  "organizations": {
+    "personal": {
+      "name": "personal",
+      "description": "Personal GitHub Account",
+      "git_user_name": "shawnm",
+      "git_user_email": "uptime.llc.ops@gmail.com",
+      "ssh_key_path": "./.ssh/id_rsa",
+      "github_username": "smeredith-k",
+      "github_token": "",
+      "expected_user": "smeredith-k"
+    }
+  },
+  "github": {
+    "host": "github.com",
+    "api_url": "https://api.github.com"
+  },
+  "project": {
+    "name": "Swiggit Git CLI Tool",
+    "description": "Multi-organization Git CLI with SSH key management, validation, and confirmation prompts"
+  },
+  "cli": {
+    "auto_push": true,
+    "auto_set_upstream": true,
+    "verbose_output": false,
+    "colorized_output": true
+  }
+}
