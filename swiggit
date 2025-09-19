@@ -5,10 +5,12 @@
 
 set -e
 
-# Load config
+# Load config from current working directory
 CONFIG_FILE=".swiggit.json"
 if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo "❌ Config file $CONFIG_FILE not found!"
+    echo "❌ Config file $CONFIG_FILE not found in current directory!"
+    echo "💡 Each project needs its own .swiggit.json config file"
+    echo "   Example: https://github.com/uptime-org/swiggit/blob/main/.swiggit.example.json"
     exit 1
 fi
 

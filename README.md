@@ -1,53 +1,81 @@
-# 🔧 SWIGGIT - Multi-Organization Git CLI Tool
+# 🍀 Swiggit 💰
+**Irish Gold Multi-Organization Git CLI with Identity Management**
 
-**Swiggit** = **S**ecure **W**orkflow, **I**ntegrated **G**it operations with **G**uarded **I**dentity **T**ool
+## 🚀 One-Command Install
 
-A powerful command-line tool for managing Git operations across multiple organizations with built-in SSH key management, authentication validation, and confirmation prompts.
+```bash
+curl -fsSL https://raw.githubusercontent.com/uptime-org/swiggit/main/install.sh | bash
+```
+
+Then in any project directory:
+```bash
+# Copy example config
+curl -fsSL https://raw.githubusercontent.com/uptime-org/swiggit/main/.swiggit.example.json > .swiggit.json
+
+# Edit config with your details
+vim .swiggit.json
+
+# Start using Swiggit!
+swiggit identity
+swiggit status
+```
 
 ## ✨ Features
 
-- 🔐 **SSH Key Management** - Centralized SSH key configuration and validation
-- 🏢 **Multi-Organization Support** - Easy switching between personal, work, and client organizations  
-- ✅ **Authentication Validation** - Proves which account you're connected to before operations
-- ⚠️ **Confirmation Prompts** - Never accidentally create repos in the wrong organization
-- 🚀 **Automated Workflows** - Commit, push, and repository creation with full context
-- 🎨 **Colorized Output** - Clear, visual feedback for all operations
-
-## 🚀 Quick Start
-
-1. **Configure your settings** in `.ssh/.swiggit`
-2. **Add your SSH keys** to `.ssh/`
-3. **Run commands** with full validation and confirmation
+- 🍀 **Irish Gold Theme** - Beautiful colors and rainbow animations
+- 🔐 **Identity Management** - Per-project SSH keys and git identity
+- 🏢 **Multi-Organization Support** - Personal accounts and organizations  
+- ✅ **Smart Operations** - Auto-setup remotes, upstream tracking
+- ⚠️ **Confirmation Prompts** - Never accidentally push to wrong repo
+- 🚀 **Complete Git Workflow** - All commands you need
+- 💰 **GitHub Integration** - Create repos via API with tokens
 
 ## 📋 Commands
 
 ```bash
-./swiggit.sh status     # Show repository status and SSH configuration
-./swiggit.sh list       # List repositories in your organizations  
-./swiggit.sh create     # Create new repository with validation
-./swiggit.sh commit     # Commit and push changes with full context
-./swiggit.sh help       # Show all available commands
+swiggit identity       # Show current identity
+swiggit status         # Git status
+swiggit add [files]    # Stage files
+swiggit commit [msg]   # Commit changes  
+swiggit push           # Smart push (auto-setup remote/upstream)
+swiggit pull           # Pull from remote
+swiggit rebase         # Interactive rebase
+swiggit create         # Create GitHub repository via API
 ```
 
 ## 🔧 Configuration
 
-Edit `.ssh/.swiggit` to configure:
-- **Git Identity** (name, email)
-- **SSH Settings** (key path, options)
-- **Organizations** (with descriptions)
-- **Default Settings** (branch, auto-push, etc.)
+Each project needs a `.swiggit.json` file:
+
+```json
+{
+  "organizations": {
+    "personal": {
+      "name": "personal",
+      "description": "Personal GitHub Account",
+      "git_user_name": "your-name",
+      "git_user_email": "your-email@domain.com",
+      "ssh_key_path": "./.ssh/id_rsa",
+      "github_username": "your-github-username",
+      "github_token": "your_personal_access_token",
+      "expected_user": "your-github-username"
+    }
+  }
+}
+```
 
 ## 🛡️ Security Features
 
-- **Identity Verification** - Always shows which GitHub account you're authenticated as
-- **Organization Validation** - Tests actual access before creating repositories  
-- **Explicit Confirmation** - Requires manual confirmation for destructive operations
-- **SSH Key Isolation** - Uses project-specific SSH keys with proper options
+- **Project-Specific Config** - Each project has its own identity
+- **SSH Key Isolation** - Uses specified SSH keys with IdentitiesOnly
+- **Token-Based API** - No global git configs needed
+- **Gitignore Protection** - Config files are automatically ignored
+- **Identity Verification** - Shows exactly which account you're using
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+MIT License
 
 ---
 
-**Built for secure, multi-organization Git workflows** 🎯# Testing rebase command
+**🍀 Happy coding with Irish gold! 💰🌈**
