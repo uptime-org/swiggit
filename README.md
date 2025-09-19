@@ -50,4 +50,4 @@ MIT License - See LICENSE file for details
 
 ---
 
-**Built for secure, multi-organization Git workflows** 🎯
+**Built for secure, multi-organization Git workflows** 🎯# Testing rebase command
