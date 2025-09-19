@@ -9,8 +9,8 @@ curl -fsSL https://raw.githubusercontent.com/uptime-org/swiggit/main/install.sh 
 
 Then in any project directory:
 ```bash
-# Copy example config
-curl -fsSL https://raw.githubusercontent.com/uptime-org/swiggit/main/.swiggit.example.json > .swiggit.json
+# Create config file instantly
+swiggit init
 
 # Edit config with your details
 vim .swiggit.json
@@ -33,6 +33,7 @@ swiggit status
 ## 📋 Commands
 
 ```bash
+swiggit init           # Create .swiggit.json config file
 swiggit identity       # Show current identity
 swiggit status         # Git status
 swiggit add [files]    # Stage files
