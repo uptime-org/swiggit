@@ -17,13 +17,13 @@
   "organizations": {
     "personal": {
       "name": "personal",
-      "description": "Personal GitHub Account",
+      "description": "Uptime LLC Personal Account",
       "git_user_name": "shawnm",
       "git_user_email": "uptime.llc.ops@gmail.com",
       "ssh_key_path": "./.ssh/id_rsa",
-      "github_username": "smeredith-k",
-      "github_token": "",
-      "expected_user": "smeredith-k"
+      "github_username": "uptime-org",
+      "github_token": "??",
+      "expected_user": "uptime-org"
     }
   },
   "github": {
