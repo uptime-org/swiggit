@@ -1,5 +1,7 @@
-# 🍀 Swiggit 💰
-**Irish Gold Multi-Organization Git CLI with Identity Management**
+# Swiggit
+**Multi-Organization Git CLI with Identity Management**
+
+*A secure command-line tool for managing Git operations across multiple organizations with SSH key isolation and per-project identity management.*
 
 ## 🚀 One-Command Install
 
@@ -22,13 +24,13 @@ swiggit status
 
 ## ✨ Features
 
-- 🍀 **Irish Gold Theme** - Beautiful colors and rainbow animations
-- 🔐 **Identity Management** - Per-project SSH keys and git identity
-- 🏢 **Multi-Organization Support** - Personal accounts and organizations  
-- ✅ **Smart Operations** - Auto-setup remotes, upstream tracking
-- ⚠️ **Confirmation Prompts** - Never accidentally push to wrong repo
-- 🚀 **Complete Git Workflow** - All commands you need
-- 💰 **GitHub Integration** - Create repos via API with tokens
+- 🔐 **Identity Management** - Per-project SSH keys and git identity configuration
+- 🏢 **Multi-Organization Support** - Seamlessly work with personal accounts and organizations  
+- ✅ **Smart Operations** - Auto-setup remotes, upstream tracking, and validation
+- ⚠️ **Safety Features** - Confirmation prompts prevent accidental operations
+- 🚀 **Complete Git Workflow** - All essential git operations in one tool
+- 🔗 **GitHub Integration** - Create repositories via API with token authentication
+- 🌈 **Enhanced UI** - Colorized output with clear visual feedback
 
 ## 📋 Commands
 
@@ -75,8 +77,10 @@ Each project needs a `.swiggit.json` file:
 
 ## 📄 License
 
-MIT License
+MIT License with Non-Commercial Restriction - See [LICENSE](LICENSE) file for details.
+
+**For commercial use, please contact:** uptime.llc.ops@gmail.com
 
 ---
 
-**🍀 Happy coding with Irish gold! 💰🌈**# Testing workflow
+**Secure, multi-organization Git workflows made simple.**

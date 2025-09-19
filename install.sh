@@ -9,7 +9,7 @@ REPO="uptime-org/swiggit"
 INSTALL_DIR="/usr/local/bin"
 TEMP_DIR="/tmp/swiggit-install"
 
-echo "🍀 Installing Swiggit - Irish Gold Git CLI 💰"
+echo "🚀 Installing Swiggit - Multi-Organization Git CLI"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # Check if running on macOS
@@ -68,7 +68,7 @@ fi
 rm -rf "$TEMP_DIR"
 
 echo ""
-echo "🎉 Swiggit installed successfully! 💰🌈"
+echo "🎉 Swiggit installed successfully! 🚀"
 echo ""
 echo "🚀 Quick Start:"
 echo "  1. cd into your project directory"
@@ -133,4 +133,4 @@ echo "  swiggit pull           - Pull from remote"
 echo "  swiggit status         - Git status"
 echo "  swiggit rebase         - Interactive rebase"
 echo ""
-echo "🍀 Happy coding! 💰🌈"
+echo "🚀 Happy coding!"
