@@ -77,6 +77,30 @@ echo "  3. Edit .swiggit.json with your details"
 echo "  4. Add your GitHub token and SSH key path"
 echo "  5. Run: swiggit identity"
 echo ""
+echo "📄 Example Config (.swiggit.json):"
+cat << 'EOF'
+{
+  "organizations": {
+    "personal": {
+      "name": "personal",
+      "description": "Personal GitHub Account",
+      "git_user_name": "your-name",
+      "git_user_email": "your-email@domain.com",
+      "ssh_key_path": "./.ssh/id_rsa",
+      "github_username": "your-github-username",
+      "github_token": "ghp_xxxxxxxxxxxxxxxxxxxx",
+      "expected_user": "your-github-username"
+    }
+  }
+}
+EOF
+echo ""
+echo "🔑 GitHub Token:"
+echo "  1. Go to: https://github.com/settings/tokens"
+echo "  2. Generate new token (classic)"
+echo "  3. Select 'repo' scope (full control of private repositories)"
+echo "  4. Copy token and paste in .swiggit.json"
+echo ""
 echo "📚 Commands:"
 echo "  swiggit init           - Create .swiggit.json config file"
 echo "  swiggit create         - Create repository"
